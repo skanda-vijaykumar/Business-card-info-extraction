@@ -3,8 +3,9 @@
 An end-to-end solution for detecting business cards in images and extracting structured contact information using Visual Language Models (VLMs). The project demonstrates the superiority of transformer-based architectures over traditional convolutional neural networks for feature recognition and information extraction. This project is unique cause it works completely locally and is useful for companies who was to reduce redundant work and yet keep data secure.  
 
 ## Features  
+- **Data stored locally:** The entire system is run local network. Your image and data is stored on your hardware only.  
 - **Card Detection:** Locates and crops business cards from arbitrary photographs.  
-- **Multi-Modal Extraction:** Leverages VLMs to jointly process visual layouts and text, extracting fields such as name, company, designation, phone number, email, and address.  
+- **Multi-Modal Extraction:** Leverages VLMs to jointly process visual layouts and text, extracting fields such as name, company, designation, phone number, email, and address. (can be customized by just changing the prompt in the back-end) 
 - **Structured Output:** Returns results in JSON or CSV format for easy integration with CRMs or databases.  
 - **Demo Interface:** Includes a simple web or notebook-based demo for quick experimentation.  
 
