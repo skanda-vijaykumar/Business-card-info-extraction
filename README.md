@@ -56,11 +56,4 @@ run this script on your server or hardware. This has the VLM which receives imag
 
 ![card](https://github.com/user-attachments/assets/6bbc8218-7b67-4ded-93ea-e51be952c9b7)
 
-## Contributing  
-- Fork the repository and create a feature branch for new functionalities.  
-- Ensure code follows project linting and formatting standards.  
-- Add unit tests for new modules and maintain coverage.  
-- Submit a pull request with a detailed description of changes.  
 
-## License  
-This project is released under the MIT License.  
