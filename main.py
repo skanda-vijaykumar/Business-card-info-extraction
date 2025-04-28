@@ -173,14 +173,10 @@ def run_ollama_command(image_path: str) -> str:
         logger.info(f"Running Ollama command: {cmd1}")
         
         # Run command with increased timeout
-        process = subprocess.run(
-            cmd1,
-            shell=True,
+        process = subprocess.run(cmd1, shell=True,
             capture_output=True,
             text=True,
-            timeout=180,  # 3 minutes timeout
-            encoding='utf-8'
-        )
+            timeout=180, encoding='utf-8')
         
         if process.returncode != 0:
             logger.error(f"Command failed with error: {process.stderr}")
@@ -196,9 +192,9 @@ def run_ollama_command(image_path: str) -> str:
         logger.error(f"Error in Ollama command: {str(e)}")
         raise
 
+## Process a business card image and extract information
 @app.post("/process-card", response_model=ProcessResponse)
 async def process_card(card_request: CardImage):
-    """Process a business card image and extract information"""
     try:
         # Decode and save image
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -251,90 +247,64 @@ async def process_card(card_request: CardImage):
                     update_excel_file(parsed_data, ref_number)
                 except Exception as excel_error:
                     logger.error(f"Error updating Excel file: {str(excel_error)}")
-                    return ProcessResponse(
-                        status="partial_success",
-                        data=parsed_data,
-                        message=f"Data saved to JSON but Excel update failed: {str(excel_error)}",
-                        saved_image=image_path
-                    )
+                    return ProcessResponse(status="partial_success", data=parsed_data, message=f"Data saved to JSON but Excel update failed: {str(excel_error)}", saved_image=image_path)
                 
-                return ProcessResponse(
-                    status="success",
-                    data=parsed_data,
-                    saved_image=image_path
-                )
+                return ProcessResponse(status="success",data=parsed_data, saved_image=image_path)
                 
             except json.JSONDecodeError as e:
                 logger.error(f"Failed to parse JSON response: {e}")
-                return ProcessResponse(
-                    status="error",
-                    message=f"Failed to parse response: {str(e)}",
-                    saved_image=image_path
-                )
+                return ProcessResponse(status="error", message=f"Failed to parse response: {str(e)}", saved_image=image_path)
 
         except Exception as e:
             logger.error(f"Error processing with Ollama: {str(e)}")
-            return ProcessResponse(
-                status="partial_success",
-                message=f"Image saved but processing failed: {str(e)}",
-                saved_image=image_path
-            )
+            return ProcessResponse(status="partial_success", message=f"Image saved but processing failed: {str(e)}", saved_image=image_path)
 
     except Exception as e:
         logger.error(f"Error in process_card: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
+## Save the extracted card data to a JSON file
 def save_to_json(card_data: CardData):
-    """Save the extracted card data to a JSON file"""
     try:
         filename = 'business_cards.json'
-        
         # Create file if it doesn't exist
         if not os.path.exists(filename):
             with open(filename, 'w', encoding='utf-8') as f:
                 json.dump([], f)
         
-        # Read existing data
+        ## Read existing data
         with open(filename, 'r', encoding='utf-8') as f:
             try:
                 data = json.load(f)
             except json.JSONDecodeError:
                 data = []
-        
-        # Append new data
+        ## Append new data
         data.append(card_data.dict())
-        
         # Write back to file
         with open(filename, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-            
+            json.dump(data, f, indent=2, ensure_ascii=False)            
         logger.info(f"Saved card data to {filename}")
-        
     except Exception as e:
         logger.error(f"Error saving to JSON: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error saving data: {str(e)}")
 
+## Health check endpoint
 @app.get("/health")
 async def health_check():
-    """Health check endpoint"""
     return {
         "status": "healthy",
         "ollama_available": check_ollama_available()
     }
 
+## Check if Ollama is available
 def check_ollama_available() -> bool:
-    """Check if Ollama is available"""
     try:
         subprocess.run(["ollama", "list"], capture_output=True, timeout=5)
         return True
     except:
         return False
-
+        
+## Start up uvicorn
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(
-        "shot:app",
-        host="0.0.0.0",
-        port=5000,
-        reload=True
-    )
+    uvicorn.run("shot:app", host="0.0.0.0", port=5000, reload=True)
