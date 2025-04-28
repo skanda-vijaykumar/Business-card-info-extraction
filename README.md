@@ -53,6 +53,8 @@ run this script on your server or hardware. This has the VLM which receives imag
 3. You can check the logs.
    
 ## Demo  
+
+![card](https://github.com/user-attachments/assets/6bbc8218-7b67-4ded-93ea-e51be952c9b7)
 [A demo video]! https://github.com/skanda-vijaykumar/Business-card-info-extraction/blob/main/Card_detection_final.mp4
 
 ## Contributing  
