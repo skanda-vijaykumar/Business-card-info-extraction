@@ -4,3 +4,4 @@ The motive is to prove that Transformers are better in feature recognisition tha
 
 ## Demo video
 
+Card_detection_final.mp4
