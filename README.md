@@ -42,20 +42,15 @@ Open andriod studio 'cd' to cloned repo and load the project directry which is n
 Great! Now you have built the mobile app.
 
 now in this repo I have shared the main.py file for the back end. 
-
 run this script on your server or hardware. This has the VLM which receives image,processes the image and extracts the data and stores the image in an .xlsx and json file. 
  
-
 ## Usage  
-1. Place your test images in the `images/` directory.  
-2. Run the extraction script:  
-   ```bash
-   python extract_info.py --input images/card1.jpg --output results.json
-   ```
-3. View structured fields in `results.json` or load into a pandas DataFrame for analysis.  
-
+1. Open the app. Click an image of the business card.
+2. BOOM! image is sent to the server >> information is extracted >> extracted information is shown on your phone app. 
+3. You can check the logs.
+   
 ## Demo  
-A demo video illustrating detection and extraction can be viewed from the project’s GitHub page.[1]  
+[A demo video]! https://github.com/skanda-vijaykumar/Business-card-info-extraction/Card_detection_final.mp4
 
 ## Contributing  
 - Fork the repository and create a feature branch for new functionalities.  
