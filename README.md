@@ -2,6 +2,8 @@
 
 An end-to-end solution for detecting business cards in images and extracting structured contact information using Visual Language Models (VLMs). The project demonstrates the superiority of transformer-based architectures over traditional convolutional neural networks for feature recognition and information extraction. This project is unique cause it works completely locally and is useful for companies who was to reduce redundant work and yet keep data secure.  
 
+This is a simple project. The only point was for me to help automate redundant data entry stuff. You can modify and essestially build a system to extract anything from anything. VLMs seem better for unknown data than using and training CNN's or other OCR + object detection methods. 
+
 ## Features  
 - **Data stored locally:** The entire system is run local network. Your image and data is stored on your hardware only.  
 - **Card Detection:** Locates and crops business cards from arbitrary photographs.  
@@ -61,20 +63,3 @@ run this script on your server or hardware. This has the VLM which receives imag
 
 ## License  
 This project is released under the MIT License.  
-
-## Acknowledgments  
-- The Hugging Face Transformers team for VLM architectures.  
-- OpenCV and PIL communities for image processing utilities.  
-- Inspiration from existing OCR and business-card extraction tools.
-
-Citations:
-[1] https://github.com/skanda-vijaykumar/Business-card-info-extraction
-[2] https://github.com/tulasinnd/Text-Extraction-From-Business-Card-Using-OCR
-[3] https://github.com/bhavyabhagerathi/BizCardX-Extracting-Business-Card-Data-with-OCR
-[4] https://github.com/Go7bi/BizCardX_-Extracting-Business-Card-Data-with-OCR
-[5] https://github.com/Muthukumar0908/BizCardX-Extracting-Business-Card-Data-with-OCR/blob/main/README.md
-[6] https://github.com/DineshDhamodharan24/BizCardX-Extracting-Business-Card-Data-with-OCR
-[7] https://github.com/Thiruvenkatam007/business-card-data-extraction/blob/main/README.md
-[8] https://arxiv.org/pdf/2403.05530.pdf
-[9] https://www.scribd.com/document/718355041/Gemini-1-5-Report
-[10] https://arxiv.org/html/2403.05530v2
