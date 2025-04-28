@@ -3,6 +3,9 @@
 An end-to-end solution for detecting business cards in images and extracting structured contact information using Visual Language Models (VLMs). The project demonstrates the superiority of transformer-based architectures over traditional convolutional neural networks for feature recognition and information extraction. This project is unique cause it works completely locally and is useful for companies who was to reduce redundant work and yet keep data secure.  
 
 This is a simple project. The only point was for me to help automate redundant data entry stuff. You can modify and essestially build a system to extract anything from anything. VLMs seem better for unknown data than using and training CNN's or other OCR + object detection methods. 
+## Demo  
+
+![card](https://github.com/user-attachments/assets/6bbc8218-7b67-4ded-93ea-e51be952c9b7)
 
 ## Features  
 - **Data stored locally:** The entire system is run local network. Your image and data is stored on your hardware only.  
@@ -52,8 +55,6 @@ run this script on your server or hardware. This has the VLM which receives imag
 2. BOOM! image is sent to the server >> information is extracted >> extracted information is shown on your phone app. 
 3. You can check the logs.
    
-## Demo  
 
-![card](https://github.com/user-attachments/assets/6bbc8218-7b67-4ded-93ea-e51be952c9b7)
 
 
