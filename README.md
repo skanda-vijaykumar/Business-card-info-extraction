@@ -1,4 +1,4 @@
-**Business Card Info Extraction**  
+## **Business Card Info Extraction**  
 
 An end-to-end solution for detecting business cards in images and extracting structured contact information using Visual Language Models (VLMs). The project demonstrates the superiority of transformer-based architectures over traditional convolutional neural networks for feature recognition and information extraction.[1]
 
@@ -71,6 +71,3 @@ Citations:
 [8] https://arxiv.org/pdf/2403.05530.pdf
 [9] https://www.scribd.com/document/718355041/Gemini-1-5-Report
 [10] https://arxiv.org/html/2403.05530v2
-
----
-Answer from Perplexity: pplx.ai/share
