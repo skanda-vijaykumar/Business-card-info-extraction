@@ -1,6 +1,6 @@
 ## **Business Card Info Extraction**  
 
-An end-to-end solution for detecting business cards in images and extracting structured contact information using Visual Language Models (VLMs). The project demonstrates the superiority of transformer-based architectures over traditional convolutional neural networks for feature recognition and information extraction.[1]
+An end-to-end solution for detecting business cards in images and extracting structured contact information using Visual Language Models (VLMs). The project demonstrates the superiority of transformer-based architectures over traditional convolutional neural networks for feature recognition and information extraction. This project is unique cause it works completely locally and is useful for companies who was to reduce redundant work and yet keep data secure.  
 
 ## Features  
 - **Card Detection:** Locates and crops business cards from arbitrary photographs.  
@@ -25,15 +25,26 @@ Traditional OCR pipelines often struggle with varied card designs, fonts, and la
 - Python 3.8+  
 - PyTorch or TensorFlow  
 - Transformers library (e.g., Hugging Face)  
-- OpenCV, PIL for image handling  
+- OpenCV, PIL for image handling
+- Ollama  
 - JSON, pandas for output serialization  
+- Android studio
+  
+## Installation
+Create a virtual env and install necessary packages. I think I have included all relevant ones. mb if I missed out on anything.
 
-## Installation  
 ```bash
 git clone https://github.com/skanda-vijaykumar/Business-card-info-extraction.git
 cd Business-card-info-extraction
 pip install -r requirements.txt
 ```
+Open andriod studio 'cd' to cloned repo and load the project directry which is named 'CardDetector' >> Clean gradel and build gradel >> run the app file. 
+Great! Now you have built the mobile app.
+
+now in this repo I have shared the main.py file for the back end. 
+
+run this script on your server or hardware. This has the VLM which receives image,processes the image and extracts the data and stores the image in an .xlsx and json file. 
+ 
 
 ## Usage  
 1. Place your test images in the `images/` directory.  
