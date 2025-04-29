@@ -4,8 +4,12 @@ An end-to-end solution for detecting business cards in images and extracting str
 
 This is a simple project. The only point was for me to help automate redundant data entry stuff. You can modify and essestially build a system to extract anything from anything. VLMs seem better for unknown data than using and training CNN's or other OCR + object detection methods. 
 ## Demo  
+Left  is the server side, right is the android app
 
-![card](https://github.com/user-attachments/assets/6bbc8218-7b67-4ded-93ea-e51be952c9b7)
+![temp](https://github.com/user-attachments/assets/1d0e665a-eef1-4bf1-af45-700bf3b0cda2)
+
+
+
 
 ## Features  
 - **Data stored locally:** The entire system is run local network. Your image and data is stored on your hardware only.  
