@@ -3,6 +3,9 @@
 An end-to-end solution for detecting business cards in images and extracting structured contact information using Visual Language Models (VLMs). The project demonstrates the superiority of transformer-based architectures over traditional convolutional neural networks for feature recognition and information extraction. This project is unique cause it works completely locally and is useful for companies who was to reduce redundant work and yet keep data secure.  
 
 This is a simple project. The only point was for me to help automate redundant data entry stuff. You can modify and essestially build a system to extract anything from anything. VLMs seem better for unknown data than using and training CNN's or other OCR + object detection methods. 
+
+A little bit of tinkering and I think this project could help out people who are worried about data.
+
 ## Demo  
 Left  is the server side, right is the android app
 
@@ -55,10 +58,9 @@ now in this repo I have shared the main.py file for the back end.
 run this script on your server or hardware. This has the VLM which receives image,processes the image and extracts the data and stores the image in an .xlsx and json file. 
  
 ## Usage  
-1. Open the app. Click an image of the business card.
-2. BOOM! image is sent to the server >> information is extracted >> extracted information is shown on your phone app. 
-3. You can check the logs.
-   
-
-
-
+1. Run the python script at the server end. (main.py)
+2. Open the app.
+3. Enter the IP address of your server (1st time only)
+4. Click an image of the business card using the app.
+5. BOOM! image is sent to the server >> structured information is extracted >> extracted information is shown on your phone app. 
+6. At the server end information is stored in .xlsx and .json formats. Info is also saved in logs section of the app.
